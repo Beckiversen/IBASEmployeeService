@@ -12,7 +12,7 @@ USER appuser
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 WORKDIR /src
 COPY ["/IBASEmployeeService.csproj", "./"]
-RUN dotnet restore "/IBASEmployeeService.csproj"
+RUN dotnet restore "IBASEmployeeService.csproj"
 COPY . .
 WORKDIR "/IBASEmployeeService"
 RUN dotnet build "IBASEmployeeService.csproj" -c Release -o /app/build
